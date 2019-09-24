@@ -25,14 +25,14 @@ td{
 
 .topbox{
   margin: 0px auto;
-  width: 1700px;
+  width:81.65%;
   height: 30px;
   background-color: #3d3935;
 }
 
 .outterbox{
   margin: 0px auto;
-  width: 1670px;
+  width: 80%;
   height: 800px;
   padding-left: 30px;
   background-color: #ffffff;
@@ -70,7 +70,7 @@ table#tbl1{
 
 .botbox{
   margin: 0px auto;
-  width: 1700px;
+  width: 81.65%;
   height: 50px;
   background-color: #3d3935;
 }
