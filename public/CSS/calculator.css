@@ -23,15 +23,10 @@ td{
   background-color: #b8111a;
 }
 
-.topbox{
-  margin: 0px auto;
-  width:81.65%;
-  height: 30px;
-  background-color: #3d3935;
-}
-
 .outterbox{
   margin: 0px auto;
+  border-top: 30px solid #3d3935;
+  border-bottom: 50px solid #3d3935;
   width: 80%;
   height: 800px;
   padding-left: 30px;
@@ -40,7 +35,7 @@ td{
 
 .innerbox{
   float: left;
-  width: 1200px;
+  width: 70%;
   height: 640px;
   padding-top: 10px;
   padding-left: 20px;
@@ -62,15 +57,8 @@ table#tbl1{
 
 .inpbox{
   width: 50%;
-  height: 40%;
+  height: 35%;
 }
 .rslt{
   padding-top: 10px;
-}
-
-.botbox{
-  margin: 0px auto;
-  width: 81.65%;
-  height: 50px;
-  background-color: #3d3935;
 }
