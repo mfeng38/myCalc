@@ -1,5 +1,6 @@
 html, body, h1, h2, h3, h4, h5, h6, font {
   font-family: sans-serif;
+  overflow: auto;
 }
 
 h3{
@@ -16,8 +17,9 @@ th{
   background-color: #dddddd;
 }
 td{
-  height: 100px;
+  height: 90px;
 }
+
 .pagecolour{
   margin: 0px auto;
   background-color: #b8111a;
@@ -27,8 +29,8 @@ td{
   margin: 0px auto;
   border-top: 30px solid #3d3935;
   border-bottom: 50px solid #3d3935;
-  width: 80%;
-  height: 800px;
+  width: 80vw;
+  height: 85vh;
   padding-left: 30px;
   background-color: #ffffff;
 }
@@ -36,7 +38,7 @@ td{
 .innerbox{
   float: left;
   width: 70%;
-  height: 640px;
+  height: 80%;
   padding-top: 10px;
   padding-left: 20px;
   background-color: #e9eff1;
@@ -59,6 +61,19 @@ table#tbl1{
   width: 50%;
   height: 35%;
 }
+
 .rslt{
   padding-top: 10px;
+}
+
+.bttn{
+  background-color: #b81012;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  float: right;
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 2%;
 }

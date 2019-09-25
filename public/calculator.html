@@ -3,6 +3,7 @@
   <head>
     <title>CourSys - Formula Tester</title>
     <link rel="stylesheet" type="text/css" href="CSS\calculator.css">
+    <script src="JS\calculator.js" defer></script>
   </head>
   <body class="pagecolour">
 
@@ -25,33 +26,36 @@
           <tr>
             <td>Activity 1</td>
             <td>A1</td>
-            <td><input type="text" name="w1" class="inpbox"></td>
-            <td><input type="text" name="g11" class="inpbox"> /<br></br><input type="text" name="g12" class="inpbox"></td>
-            <td>Fill</td>
+            <td><input type="text" name="weight" class="inpbox"></td>
+            <td><input type="text" name="grade" class="inpbox"> <font size="5">/</font><br></br><input type="text" name="total" class="inpbox"></td>
+            <td name="percent"></td>
           </tr>
           <tr>
             <td>Activity 2</td>
             <td>A2</td>
-            <td><input type="text" name="w2" class="inpbox"></td>
-            <td>Fill</td>
-            <td>Fill</td>
+            <td><input type="text" name="weight" class="inpbox"></td>
+            <td><input type="text" name="grade" class="inpbox"> <font size="5">/</font><br></br><input type="text" name="total" class="inpbox"></td>
+            <td name="percent"></td>
           </tr>
           <tr>
             <td>Activity 3</td>
             <td>A3</td>
-            <td><input type="text" name="w3" class="inpbox"></td>
-            <td>Fill</td>
-            <td>Fill</td>
+            <td><input type="text" name="weight" class="inpbox"></td>
+            <td><input type="text" name="grade" class="inpbox"> <font size="5">/</font><br></br><input type="text" name="total" class="inpbox"></td>
+            <td name="percent"></td>
           </tr>
           <tr>
             <td>Activity 4</td>
             <td>A4</td>
-            <td><input type="text" name="w4" class="inpbox"></td>
-            <td>Fill</td>
-            <td>Fill</td>
+            <td><input type="text" name="weight" class="inpbox"></td>
+            <td><input type="text" name="grade" class="inpbox"> <font size="5">/</font><br></br><input type="text" name="total" class="inpbox"></td>
+            <td name="percent"></td>
           </tr>
         </table>
         <h3 class="rslt">Result</h3>
+        <font id="answr"></font>
+        <button type="button" id="mean" class="bttn">MEAN</button>
+        <button type="button" id="weighted" class="bttn">WEIGHTED</button>
       </div>
     </div>
   </div>
