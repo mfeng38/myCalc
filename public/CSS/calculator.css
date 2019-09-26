@@ -25,14 +25,16 @@ td{
   background-color: #b8111a;
 }
 
-.outterbox{
+div#outterbox{
   margin: 0px auto;
   border-top: 30px solid #3d3935;
   border-bottom: 50px solid #3d3935;
   width: 80vw;
-  height: 85vh;
   padding-left: 30px;
+  margin-bottom: 100px;
   background-color: #ffffff;
+  display: block;
+  overflow: auto;
 }
 
 .innerbox{
@@ -40,7 +42,9 @@ td{
   width: 70%;
   height: 80%;
   padding-top: 10px;
+  padding-bottom: 20px;
   padding-left: 20px;
+  margin-bottom: 50px;
   background-color: #e9eff1;
 }
 
