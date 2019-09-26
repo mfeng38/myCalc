@@ -4,11 +4,13 @@ var rowButton = document.getElementById('rowbttn');
 var gr = document.getElementsByClassName('inpbox');
 var tbl = document.getElementById('tbl1');
 var numRows = 4;
+var first = true;
 
 var numerator = document.getElementsByName('grade');
 var denominator = document.getElementsByName('total');
 var weights = document.getElementsByName('weight');
 var result = document.getElementById('answr');
+var prevAnswer = document.getElementById('prvanswr');
 var prcnt = document.getElementsByName('percent');
 
 for(i=0; i < gr.length; i++)
@@ -24,7 +26,7 @@ function percent(){
   {
     if(isFinite(numerator[i].value/denominator[i].value))
     {
-      prcnt[i].innerHTML = parseFloat( ( numerator[i].value/denominator[i].value ) * 100 ).toFixed(2) + "%";
+      prcnt[i].innerHTML = parseFloat( ( numerator[i].value/denominator[i].value ) * 100 ) + "%";
     }
     else
     {
@@ -46,7 +48,8 @@ function mean(){
   }
   if(isFinite(sum/counter))
   {
-    result.innerHTML = parseFloat( (sum/counter)*100 ).toFixed(2) + "%";
+    prevAnswer.innerHTML = result.textContent;
+    result.innerHTML = parseFloat( (sum/counter)*100 ) + "%";
   }
 }
 
@@ -63,8 +66,10 @@ function weighted(){
   }
   if(isFinite(sum/counter))
   {
-    result.innerHTML = parseFloat( (sum/counter)*100 ).toFixed(2) + "%";
+    prevAnswer.innerHTML = result.textContent;
+    result.innerHTML = parseFloat( (sum/counter)*100 ) + "%";
   }
+
 }
 
 function addRow(){

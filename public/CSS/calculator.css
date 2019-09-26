@@ -31,7 +31,7 @@ div#outterbox{
   border-bottom: 50px solid #3d3935;
   width: 80vw;
   padding-left: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   background-color: #ffffff;
   display: block;
   overflow: auto;
@@ -61,13 +61,26 @@ table#tbl1{
   text-align: left;
 }
 
+table#tbl2{
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: none;
+  width: 39%;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+
 .inpbox{
   width: 50%;
   height: 35%;
 }
 
-.rslt{
-  padding-top: 10px;
+.td2{
+  border: none;
+  padding: 0px;
+  height: 20px;
+  margin: 0px;
 }
 
 .bttn{
