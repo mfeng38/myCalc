@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.render('pages/index'));
 app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM tokimon');
+      const result = await client.query('SELECT trainer FROM tokimon');
       const results = { 'results': (result) ? result.rows : null};
       res.render('pages/db', results );
       client.release();
