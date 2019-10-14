@@ -54,5 +54,5 @@ app.post('/delete', (req, res) => {
   pool.query(`DELETE FROM tokimon WHERE name = '${name}'`), (error,result) => {
     if (error)
       res.end(error);
-  }
+  });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
