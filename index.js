@@ -30,7 +30,7 @@ app.get('/db', async (req, res) => {
   })
 app.get('/cool', (req, res) => res.send(cool()));
 app.get('/tokimon', (req,res) => { res.render('pages/tokimon')});
-app.post('/inputs', (req, res) => {
+app.post('/tokimon', (req, res) => {
   var name = req.body.nam;
   var weight = parseInt(req.body.weight);
   var height = parseInt(req.body.height);
@@ -47,7 +47,12 @@ app.post('/inputs', (req, res) => {
     if (error)
       res.end(error);
   })
-  var insrt =
-  res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
+  res.send("inserted");
 });
+app.post('/delete', (req, res) => {
+  var name = req.body.delete;
+  pool.query(`DELETE FROM tokimon WHERE name = '${name}'`), (error,result) => {
+    if (error)
+      res.end(error);
+  }
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
