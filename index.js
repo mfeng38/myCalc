@@ -31,9 +31,17 @@ app.get('/db', async (req, res) => {
 app.get('/cool', (req, res) => res.send(cool()));
 app.get('/tokimon', (req,res) => { res.render('pages/tokimon')});
 app.post('/inputs', (req, res) => {
-  console.log('test');
   var name = req.body.nam;
-  var val1 = req.body.fly;
-  res.send(`Hello, ${name}. \n ${val1}`);
+  var weight = req.body.weight;
+  var height = req.body.height;
+  var fly = req.body.fly;
+  var fight = req.body.fight;
+  var fire = req.body.fire;
+  var water = req.body.water;
+  var electric = req.body.electric;
+  var ice = req.body.ice;
+  var total = fly + fight + fire + water + electric + ice;
+  var trainer = req.body.trainer;
+  res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
