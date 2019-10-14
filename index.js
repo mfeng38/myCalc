@@ -32,17 +32,17 @@ app.get('/cool', (req, res) => res.send(cool()));
 app.get('/tokimon', (req,res) => { res.render('pages/tokimon')});
 app.post('/inputs', (req, res) => {
   var name = req.body.nam;
-  var weight = req.body.weight;
-  var height = req.body.height;
-  var fly = req.body.fly;
-  var fight = req.body.fight;
-  var fire = req.body.fire;
-  var water = req.body.water;
-  var electric = req.body.electric;
-  var ice = req.body.ice;
+  var weight = parseInt(req.body.weight);
+  var height = parseInt(req.body.height);
+  var fly = parseInt(req.body.fly);
+  var fight = parseInt(req.body.fight);
+  var fire = parseInt(req.body.fire);
+  var water = parseInt(req.body.water);
+  var electric = parseInt(req.body.electric);
+  var ice = parseInt(req.body.ice);
   var total = parseInt(fly) + parseInt(fight) + parseInt(fire) + parseInt(water) + parseInt(electric) + parseInt(ice);
   var trainer = req.body.trainer;
-  var insrt = `INSERT INTO tokimon VALUES (${name}, ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, ${trainer})`
+  var insrt = `INSERT INTO tokimon VALUES ('${name}', ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')`
   res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
