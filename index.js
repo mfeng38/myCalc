@@ -42,6 +42,7 @@ app.post('/inputs', (req, res) => {
   var ice = req.body.ice;
   var total = parseInt(fly) + parseInt(fight) + parseInt(fire) + parseInt(water) + parseInt(electric) + parseInt(ice);
   var trainer = req.body.trainer;
-  res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
+  var insrt = `INSERT INTO tokimon VALUES (${name}, ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, ${trainer})`
+  // res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
