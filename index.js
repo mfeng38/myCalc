@@ -40,7 +40,7 @@ app.post('/inputs', (req, res) => {
   var water = req.body.water;
   var electric = req.body.electric;
   var ice = req.body.ice;
-  var total = fly + fight + fire + water + electric + ice;
+  var total = int(fly) + int(fight) + int(fire) + int(water) + int(electric) + int(ice);
   var trainer = req.body.trainer;
   res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
 });
