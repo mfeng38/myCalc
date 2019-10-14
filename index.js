@@ -30,7 +30,7 @@ app.get('/db', async (req, res) => {
   })
 app.get('/cool', (req, res) => res.send(cool()));
 app.get('/tokimon', (req,res) => { res.render('pages/tokimon')});
-app.post('/tokimon', (req, res) => {
+app.post('/input', (req, res) => {
   var name = req.body.nam;
   var weight = parseInt(req.body.weight);
   var height = parseInt(req.body.height);
