@@ -43,9 +43,9 @@ app.post('/inputs', (req, res) => {
   var total = parseInt(fly) + parseInt(fight) + parseInt(fire) + parseInt(water) + parseInt(electric) + parseInt(ice);
   var trainer = req.body.trainer;
   pool.query(`INSERT INTO tokimon (name, weight, height, fly, fight, fire, water, electric, ice, total, trainer)
-  VALUES ('${name}', ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')`, (err,res) => {
-    console.log(err,res);
-    pool.end();
+  VALUES ('${name}', ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')`, (error,result) => {
+    if (error)
+      res.end(error);
   })
   var insrt =
   res.send(`${name} ${weight} ${height} ${fly} ${fight} ${fire} ${water} ${electric} ${ice} ${total} ${trainer}`);
