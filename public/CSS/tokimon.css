@@ -1,5 +1,5 @@
 body{
-  background-color: #3B4CCA;
+  background-color: #48BEFF;
 }
 
 ul {
@@ -7,7 +7,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #CC0000;
+  background-color: #43C59E;
 }
 
 li {
@@ -23,11 +23,11 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #3D7068;
 }
 
 table{
   table-layout: fixed;
   width: 50%;
-  text-align: left;
+  text-align: center;
 }
