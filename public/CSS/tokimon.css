@@ -25,3 +25,9 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+table#tbl1{
+  table-layout: fixed;
+  width: 50%;
+  text-align: left;
+}
