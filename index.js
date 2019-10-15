@@ -47,7 +47,7 @@ app.post('/input', (req, res) => {
     if (error)
       res.end(error);
   });
-  res.render('pages/dbview');
+  res.redirect('https://mfeng.herokuapp.com/dbview');
 });
 app.post('/delete', (req, res) => {
   var id = req.body.delete;
@@ -58,8 +58,8 @@ app.post('/delete', (req, res) => {
   res.render('pages/dbview');
 });
 app.post('/update', (req, res) => {
-  var name = req.body.update;
-  pool.query(`UPDATE tokimon SET name = '${name}'`, (error,result) => {
+  var id = req.body.change;
+  pool.query(`UPDATE tokimon SET name = '${id}'`, (error,result) => {
     if (error)
       res.end(error);
   });
