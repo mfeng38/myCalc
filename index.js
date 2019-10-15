@@ -51,7 +51,7 @@ app.post('/input', (req, res) => {
 });
 app.post('/delete', (req, res) => {
   var id = req.body.delete;
-  pool.query(`DELETE FROM tokimon WHERE UID = '${id}'`), (error,result) => {
+  pool.query(`DELETE FROM tokimon WHERE UID = ${id}`), (error,result) => {
     if (error)
       res.end(error);
   }
