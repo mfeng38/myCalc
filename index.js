@@ -46,7 +46,7 @@ app.post('/input', (req, res) => {
   VALUES ('${name}', ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')`, (error,result) => {
     if (error)
       res.end(error);
-  })
+  });
   res.render('pages/dbview');
 });
 app.post('/delete', (req, res) => {
@@ -54,7 +54,7 @@ app.post('/delete', (req, res) => {
   pool.query(`DELETE FROM tokimon WHERE UID = ${id}`, (error,result) => {
     if (error)
       res.end(error);
-  }
+  });
   res.render('pages/dbview');
 });
 app.post('/update', (req, res) => {
@@ -62,6 +62,6 @@ app.post('/update', (req, res) => {
   pool.query(`UPDATE tokimon SET name = '${name}'`, (error,result) => {
     if (error)
       res.end(error);
-  }
+  });
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
