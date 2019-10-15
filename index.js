@@ -55,7 +55,7 @@ app.post('/delete', (req, res) => {
     if (error)
       res.end(error);
   });
-  res.render('pages/dbview');
+  res.redirect('https://mfeng.herokuapp.com/dbview');
 });
 app.post('/update', (req, res) => {
   var id = req.body.change;

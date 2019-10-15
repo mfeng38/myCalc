@@ -33,6 +33,7 @@ li a:hover {
 }
 
 table{
+  padding: 10px;
   table-layout: fixed;
   width: 100%;
   text-align: center;
