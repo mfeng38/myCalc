@@ -43,7 +43,7 @@ app.post('/input', (req, res) => {
   var total = parseInt(fly) + parseInt(fight) + parseInt(fire) + parseInt(water) + parseInt(electric) + parseInt(ice);
   var trainer = req.body.trainer;
   pool.query(`INSERT INTO tokimon (name, weight, height, fly, fight, fire, water, electric, ice, total, trainer)
-  VALUES ('${name}', ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')`), (error,result) => {
+  VALUES ('${name}', ${weight}, ${height}, ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')`, (error,result) => {
     if (error)
       res.end(error);
   })
@@ -51,7 +51,7 @@ app.post('/input', (req, res) => {
 });
 app.post('/delete', (req, res) => {
   var id = req.body.delete;
-  pool.query(`DELETE FROM tokimon WHERE UID = ${id}`), (error,result) => {
+  pool.query(`DELETE FROM tokimon WHERE UID = ${id}`, (error,result) => {
     if (error)
       res.end(error);
   }
@@ -59,7 +59,7 @@ app.post('/delete', (req, res) => {
 });
 app.post('/update', (req, res) => {
   var name = req.body.update;
-  pool.query(`UPDATE tokimon SET name = '${name}'`), (error,result) => {
+  pool.query(`UPDATE tokimon SET name = '${name}'`, (error,result) => {
     if (error)
       res.end(error);
   }
