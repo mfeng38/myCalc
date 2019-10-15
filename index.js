@@ -50,11 +50,12 @@ app.post('/input', (req, res) => {
   res.render('pages/dbview');
 });
 app.post('/delete', (req, res) => {
-  var name = req.body.delete;
-  pool.query(`DELETE FROM tokimon WHERE name = '${name}'`), (error,result) => {
+  var id = req.body.delete;
+  pool.query(`DELETE FROM tokimon WHERE UID = '${id}'`), (error,result) => {
     if (error)
       res.end(error);
   }
+  res.render('pages/dbview');
 });
 app.post('/update', (req, res) => {
   var name = req.body.update;
