@@ -2,19 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Tokimon</title>
+    <link rel="stylesheet" type="text/css" href="CSS\tokimon.css">
   </head>
   <body>
     <h2>Database Results</h2>
+    <nav>
+          <ul>
+              <li class="active"><a href="/tokimon">Home</a></li>
+              <li><a href="/dbview">View Database</a></li>
+          </ul>
+      </nav>
     <table>
       <tr>
         <th>UID</th>
         <th>Name</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Fly</th>
+        <th>Fight</th>
+        <th>Fire</th>
+        <th>Water</th>
+        <th>Electric</th>
+        <th>Ice</th>
+        <th>Total</th>
+        <th>Trainer</th>
       </tr>
       <% results.forEach(function(r) { %>
         <tr>
           <td><%= r.uid %></td>
           <td><%= r.name %></td>
+          <td><%= r.weight %></td>
+          <td><%= r.height %></td>
+          <td><%= r.fly %></td>
+          <td><%= r.fight %></td>
+          <td><%= r.fire %></td>
+          <td><%= r.water %></td>
+          <td><%= r.electric %></td>
+          <td><%= r.ice %></td>
+          <td><%= r.total %></td>
+          <td><%= r.trainer %></td>
         </tr>
       <% }); %>
     </table>
