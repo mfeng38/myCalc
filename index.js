@@ -47,7 +47,7 @@ app.post('/input', (req, res) => {
     if (error)
       res.end(error);
   })
-  res.send("inserted");
+  res.render('pages/dbview');
 });
 app.post('/delete', (req, res) => {
   var name = req.body.delete;
