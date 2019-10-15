@@ -4,9 +4,12 @@ body{
 
 ul {
   list-style-type: none;
+  top: 0;
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow: hidden;
+  position: fixed;
   background-color: #43C59E;
 }
 
@@ -28,6 +31,6 @@ li a:hover {
 
 table{
   table-layout: fixed;
-  width: 50%;
+  width: 80%;
   text-align: center;
 }
