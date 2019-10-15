@@ -7,8 +7,15 @@
   <body>
     <h2>Database Results</h2>
     <table>
+      <tr>
+        <th>UID</th>
+        <th>Name</th>
+      </tr>
       <% results.forEach(function(r) { %>
-          <td><%= r.uid %> - <%= r.name %></td>
+        <tr>
+          <td><%= r.uid %></td>
+          <td><%= r.name %></td>
+        </tr>
       <% }); %>
     </table>
   </body>
