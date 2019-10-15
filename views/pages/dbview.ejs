@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Database Results</h2>
+    <table>
+      <% results.forEach(function(r) { %>
+          <td><%= r.id %> - <%= r.name %></td>
+      <% }); %>
+    </table>
+  </body>
+</html>

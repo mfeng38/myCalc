@@ -16,12 +16,12 @@ app.use(express.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/db', async (req, res) => {
+app.get('/dbview', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM tokimon');
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/db', results );
+      res.render('pages/dbview', results );
       client.release();
     } catch (err) {
       console.error(err);
@@ -52,6 +52,13 @@ app.post('/input', (req, res) => {
 app.post('/delete', (req, res) => {
   var name = req.body.delete;
   pool.query(`DELETE FROM tokimon WHERE name = '${name}'`), (error,result) => {
+    if (error)
+      res.end(error);
+  }
+});
+app.post('/update', (req, res) => {
+  var name = req.body.update;
+  pool.query(`UPDATE tokimon SET name = '${name}'`), (error,result) => {
     if (error)
       res.end(error);
   }
