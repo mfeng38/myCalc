@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tokimon</title>
+    <link rel="stylesheet" type="text/css" href="CSS\tokimon.css">
+  </head>
+  <body>
+    <h1>Tokimon Attribute Change</h1>
+    <nav>
+      <ul>
+        <li class="active"><a href="/tokimon">Home</a></li>
+          <li><a href="/dbview">View Database</a></li>
+        </ul>
+    </nav>
+    <br></br><br></br><br></br>
+    <form class="" action="/input" method="post">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Weight</th>
+          <th>Height</th>
+          <th>Fly</th>
+          <th>Fight</th>
+          <th>Fire</th>
+          <th>Water</th>
+          <th>Electric</th>
+          <th>Ice</th>
+          <th>Trainer</th>
+        </tr>
+        <tr>
+          <% results.forEach(function(r) { %>
+              <td><input type="text" name="nam" value="<%= r.name %>"></td>
+              <td><input type="number" name="weight" value="<%= r.weight %>"></td>
+              <td><input type="number" name="height" value="<%= r.height %>"></td>
+              <td><input type="number" name="fly" value="<%= r.fly %>" min="0" max="100"></td>
+              <td><input type="number" name="fight" value="<%= r.flight %>" min="0" max="100"></td>
+              <td><input type="number" name="fire" value="<%= r.fire %>" min="0" max="100"></td>
+              <td><input type="number" name="water" value="<%= r.water %>" min="0" max="100"></td>
+              <td><input type="number" name="electric" value="<%= r.electric %>" min="0" max="100"></td>
+              <td><input type="number" name="ice" value="<%= r.ice %>" min="0" max="100"></td>
+              <td><input type="text" name="trainer" value="<%= r.trainer %>"></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td><input type="submit" name="" value="Submit Entry"></td>
+        </tr>
+      </table>
+      <br></br>
+    </form>
+  </body>
+</html>

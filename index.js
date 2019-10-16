@@ -29,19 +29,7 @@ app.get('/dbview', async (req, res) => {
     }
   })
 app.get('/cool', (req, res) => res.send(cool()));
-app.get('/tokimon', async (req, res) => {
-    var id = req.body.change;
-    try {
-      const client = await pool.connect()
-      const result = await client.query(`SELECT * FROM tokimon WHERE UID = ${id}`);
-      const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/dbview', results );
-      client.release();
-    } catch (err) {
-      console.error(err);
-      res.send("Error " + err);
-    }
-  })
+app.get('/tokimon', (req,res) => { res.render('pages/tokimon')});
 app.post('/input', (req, res) => {
   var name = req.body.nam;
   var weight = parseInt(req.body.weight);
@@ -69,11 +57,17 @@ app.post('/delete', (req, res) => {
   });
   res.redirect('https://mfeng.herokuapp.com/dbview');
 });
-app.post('/change', (req, res) => {
-  var id = req.body.change;
-  pool.query(`UPDATE tokimon SET name = '${id}'`, (error,result) => {
-    if (error)
-      res.end(error);
-  });
-});
+app.get('/change', async (req, res) => {
+    var id = req.body.change;
+    try {
+      const client = await pool.connect()
+      const result = await client.query(`SELECT * FROM tokimon WHERE UID = ${id}`);
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/modify', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
