@@ -69,5 +69,24 @@ app.post('/change', async (req, res) => {
       console.error(err);
       res.send("Error " + err);
     }
-  })
+  });
+  app.post('/change2', async (req, res) => {
+    var name = req.body.nam;
+    var weight = parseInt(req.body.weight);
+    var height = parseInt(req.body.height);
+    var fly = parseInt(req.body.fly);
+    var fight = parseInt(req.body.fight);
+    var fire = parseInt(req.body.fire);
+    var water = parseInt(req.body.water);
+    var electric = parseInt(req.body.electric);
+    var ice = parseInt(req.body.ice);
+    var total = parseInt(fly) + parseInt(fight) + parseInt(fire) + parseInt(water) + parseInt(electric) + parseInt(ice);
+    var trainer = req.body.trainer;
+    pool.query(`UPDATE tokimon SET name = '${name}', weight = ${weight}, height = ${height}, fly = ${fly}, fight = ${fight}, fire = ${fire},
+    water = ${water}, electric = ${electric} , ice = ${ice}, total = ${total}, trainer = '${trainer}' WHERE UID = ${id}`, (error,result) => {
+      if (error)
+        res.end(error);
+    });
+    res.redirect('https://mfeng.herokuapp.com/dbview');
+});
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
