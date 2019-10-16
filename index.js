@@ -71,6 +71,7 @@ app.post('/change', async (req, res) => {
     }
   });
   app.post('/change2', async (req, res) => {
+    var id = req.body.uid;
     var name = req.body.nam;
     var weight = parseInt(req.body.weight);
     var height = parseInt(req.body.height);
@@ -83,7 +84,7 @@ app.post('/change', async (req, res) => {
     var total = parseInt(fly) + parseInt(fight) + parseInt(fire) + parseInt(water) + parseInt(electric) + parseInt(ice);
     var trainer = req.body.trainer;
     pool.query(`UPDATE tokimon SET name = '${name}', weight = ${weight}, height = ${height}, fly = ${fly}, fight = ${fight}, fire = ${fire},
-    water = ${water}, electric = ${electric} , ice = ${ice}, total = ${total}, trainer = '${trainer}' WHERE UID = 9`, (error,result) => {
+    water = ${water}, electric = ${electric} , ice = ${ice}, total = ${total}, trainer = '${trainer}' WHERE UID = ${id}`, (error,result) => {
       if (error)
         res.end(error);
     });

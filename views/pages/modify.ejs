@@ -17,6 +17,11 @@
     <form class="" action="/change2" method="post">
       <table>
         <tr>
+          <% results.forEach(function(r) { %>
+            <td>Modifying Tokimon with UID: <input type="text" name="uid" value="<%= r.UID %>"></td>
+          <% }); %>
+        </tr>
+        <tr>
           <th>Name</th>
           <th>Weight</th>
           <th>Height</th>
