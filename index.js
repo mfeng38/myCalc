@@ -57,7 +57,7 @@ app.post('/delete', (req, res) => {
   });
   res.redirect('https://mfeng.herokuapp.com/dbview');
 });
-app.get('/change', async (req, res) => {
+app.post('/change', async (req, res) => {
     var id = req.body.change;
     try {
       const client = await pool.connect()
